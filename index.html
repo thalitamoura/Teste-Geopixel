@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Geopixel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="startTime()">
+    <!-- 
+        Desafio do Relógio
+    -->
+    <div class="container1">
+        <div id="txt"></div>
+    </div>
+    <!--
+        Desafio do Manipulador de Itens
+    -->
+    <div class="container2">
+        <form id="formulario" action="">
+            <div class="div_style">
+                <select name="itens" id="itens">
+                    <option value="select" selected>Selecione uma opção</option>
+                    <option value="item1">Brasil</option>
+                </select>
+            </div>
+            <div class="div_style">
+                <input id="select" name="item" size="20" type="text" placeholder="Insira um item">
+            </div>
+            <div class="div_style">
+                <button id="adicionar" type="submit">Adicionar</button>
+                <button id="remover" type="reset">Remover</button>
+                <button id="limpar" type="reset">Limpar caixa</button>
+            </div>
+            <p class="div_style">Selecione uma opção</p>
+        </form>
+    </div>
+    <!--
+        Desafio da Bola Tímida
+    -->
+    <p>Passe o mouse sobre o círculo abaixo</p>
+    <div class="container3">
+        <div class="ball"> 
+        </div>
+        <div class="border-ball"></div>
+    </div>
+
+    <script type="text/javascript">
+        //Função desafio do relógio
+        function startTime()
+        {
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('txt').innerHTML = h+":"+m+":"+s;
+        t = setTimeout('startTime()',500);
+        }
+
+        function checkTime(i)
+        {
+        if (i<10)
+        {
+        i="0" + i;
+        }
+        return i;
+        }
+
+        //Função Manipulador de itens
+
+        var input = document.getElementById('adicionar')
+        var gravar = document.write(input)
+        gravar = document.getElementById('itens')
+        
+        var selectOptions = []
+        var text = ""  
+        var options = document.getElementById("adicionar")
+        options.onclick = function()
+        {
+            text = document.getElementById("select")
+            selectOptions.push(text)
+        }
+        </script>
+</body>
+</html>

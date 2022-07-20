@@ -1,0 +1,84 @@
+#txt {
+    height: 80px;
+    width: 150px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid #000;
+    color: #fff;
+    border-radius: 10%;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container1 {
+    height: 325px;
+    width: 700px;
+    background-image: radial-gradient(circle, #0077ff 0%, #00ffaa 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container2  {
+    height: 325px;
+    width: 700px;
+    background-color: salmon;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.container3 {
+    height: 325px;
+    width: 500px;
+    margin: 20px 10px 10px 10px;
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div_style {
+    margin: 10px 10px 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes quica {
+    0% {
+        transform: translateY(-138px);
+    }
+
+    100% {
+        transform: translateY(147px);
+        width: 70px;
+        height: 30px;
+    }
+}
+
+.ball {
+    height: 50px;
+    width: 50px;
+    background-color: red;
+    border: 1px solid red;
+    border-radius: 100%;
+    animation: quica .4s cubic-bezier(.50, -0.03, .67, 1.06);
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+.border-ball {
+    height: 50px;
+    width: 50px;
+    border: 1px solid red;
+    border-radius: 100%;
+    animation: none;
+    margin-left: -51px;
+}
+
+div:hover .ball { 
+    animation: none;
+}
